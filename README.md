@@ -13,15 +13,26 @@ May 25th 2022
 
     Spent too much time drawing the pictures for this. Maybe should have just done what I did with the restaurant project. Regardless, will be done early tomorrow as I'm basically only adding the image viewer.
 
+May 26th. 2022
+
+    Lol, "only adding the image viewer." Unfortunatly I got pretty greedy with the look of it, so it was not the quick. Did take less than a day, though. I think I'm switching to seven hours a day of study now, so witch the extra time I should get most of the styling that's left done. But I've been wrong before. And I want to add a dark mode. But hey! I've already got everything set up with variables for colouring!
+
+    Oh and also I want it to work like a story book, change the image and the description changes. Might skip that just to move on.
+
+    Dark mode was super quick and easy, btw. Guess since I did it before, and there's really not a ton that can go wrong.
+
 
 ---To-Do---
 
 DONE-Draw images for slider
 DONE-Add slider
--Custom font
+DONE-Custom font
 -Prettier animations?
--Drag through images on mobile, or click
--Click through images on desktop, or use arrow keys.
--dark mode if there's time
--Make viewer endlessly scrollable
--Have images ratchet in place, but scrollable
+DONE-Drag through images on mobile, or click
+DONE-Click through images on desktop, or use arrow keys.
+DONE-dark mode if there's time
+CANCEL-Make viewer endlessly scrollable
+DONE-Have images ratchet in place, but scrollable
+DONE-scrolling mode button
+DONE-better styling
+-Add descriptions tied to images.

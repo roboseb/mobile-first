@@ -6,35 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='styles.css'>        
     <title>Seb's Mobile First</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <div id='header'>
-        <button id='menubtn'>
-            <img src="images/arrow.svg" alt="arrow icon">
-        </button>
-       
-        <h1>Mocchan</h1>
-        <div id='menu'>
-            <ul>
-                <li>About</li>
-                <li>Blog</li>
-                <li>Photos</li>
-                <li>Github</li>
-                <li>Twitter</li>
-                <li>Funnyjunk</li>
+    <div id='container'>
+        <div id='header'>
+            <button id='menubtn'>
+                <img src="images/arrow.svg" alt="arrow icon">
+            </button>
+        
+            <h1>Mocchan Viewer</h1>
+            <div id='menu'>
+                <ul>
+                    <li>About</li>
+                    <li>Blog</li>
+                    <li>Photos</li>
+                    <li>Github</li>
+                    <li>Twitter</li>
+                    <li>Funnyjunk</li>
+                    <li>
+                        <button class='smoothscrollbtn'>Snap scrolling</button>
+                    </li>
+                    <li>
+                        <button id='darkmodebtn'>Dark mode</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div id='viewer'>
+            <h2>Mocchan and Jake</h2>
+            <div id='imgbtnbox'>
+                <div id='viewerbox'></div>
+                <button id='lastimagebtn'><img src="images/arrowleft.svg" alt="Left arrow"></button>
+                <button id='nextimagebtn'><img src="images/arrowright.svg" alt="Right arrow"></button>
+            </div>
+            <h3>Mocchan is a good girl</h3>
+        </div>
+
+        <div id='hintbox'>
+            <ul id='hints'>
+                <li>Click the arrow for more options</li>
+                <li>Click an image for navigation arrows</li>
+                <li>Try snap scrolling in the menu</li>
+                <li>Also try dark mode in the menu</li>
             </ul>
         </div>
     </div>
 
-    <div id='viewer'>
-        <h2>Images</h2>
-        <div id='viewerbox'></div>
-        <h3>Mocchan is a good girl</h3>
-    </div>
-
-
-    
     <script src='script.js'></script>
 </body>
 </html>

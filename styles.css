@@ -2,8 +2,13 @@
     --backdrop: #f7fff6;
     --primary: #87D68D;
     --secondary: #BCEBCB;
-    --accent: #9D44B5;
+    --accent: #b948b3;
+    --accentlight: #e4a5e1;
     --base-margin: 10px;
+    --base-shadow: 0 5px 5px rgb(146, 146, 146);
+    --menu-shadow: 0 5px 5px rgb(85, 85, 85);
+    --text-color: black;
+
 }
 
 body {
@@ -11,6 +16,26 @@ body {
     background-color: var(--backdrop);
     display: flex;
     flex-direction: column;
+    font-family: 'Josefin Sans', sans-serif;
+    transition: background-color 0.4s;
+}
+
+body * {
+    transition: background-color 0.4s;
+    color: var(--text-color);
+}
+
+button {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--accent);
+    color: white;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    gap: 20px;
 }
 
 button#menubtn {
@@ -25,17 +50,20 @@ button#menubtn {
     display: flex;
     flex-direction: column;
     width: max-content;
-    transition: all 0.4s;
+    transition: all 0.7s;
     overflow-y: hidden;
     position: absolute;
     top: 100%;
     font-size: 2rem;
+    z-index: 1;
+    border-radius: 0 0 15px 0;
+    box-shadow: var(--menu-shadow);
 }
 
 ul {
     list-style-type: none;
     margin: 0;
-    padding: var(--base-margin);
+    padding: 15px;
     display: flex;
     flex-direction: column;
 }
@@ -46,6 +74,7 @@ ul {
     justify-content: space-between;
     height: 10vh;
     position: relative;
+    box-shadow: var(--base-shadow);
 }
 
 #header>h1 {
@@ -57,25 +86,33 @@ ul {
 }
 
 #viewer {
-    flex-grow: 1;
-    background-color: red;
-    margin: 20px;
+    background-color: var(--primary);
+    margin: 0 20px;
+    position: relative;
+    border-radius: 15px;
+    box-shadow: var(--base-shadow);
 }
 
 #viewer>h2 {
-    margin: 10px;
+    margin: 20px 20px 0px 20px;
+}
+
+#viewer>h3 {
+    margin: 10px 20px 20px 20px;
 }
 
 #viewerbox {
     box-sizing: border-box;
     width: 100%;
-    background-color: green;
+    
     padding: 10px;
     display: flex;
     overflow-x: scroll;
     -ms-overflow-style: none; 
     scrollbar-width: none; 
     gap: 10px;
+    scroll-behavior: smooth;
+    
 }
 
 #viewerbox::-webkit-scrollbar {
@@ -85,4 +122,79 @@ ul {
 #viewerbox>img {
     width: 100%;
     height: 100%;
+    pointer-events: none;
+}
+
+#imgbtnbox {
+    position: relative;
+}
+
+#imgbtnbox>button {
+    position: absolute;
+    border-style: none;
+    top: 10px;
+    bottom: 10px;
+    background-color: rgba(136, 136, 136, 0.5);
+    filter: opacity(0);
+    pointer-events: none;
+    transition: all 1s;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}   
+
+#imgbtnbox>button:hover, #imgbtnbox>button:active {
+    background-color: rgba(66, 66, 66, 0.5);
+}
+
+#imgbtnbox>#lastimagebtn {
+    left: 10px;
+
+}
+
+#imgbtnbox>#nextimagebtn {
+    right: 10px;
+}
+
+#imgbtnbox>button.btnshown {
+    filter: opacity(1);
+    pointer-events: initial;
+}
+
+#imgbtnbox>button>img {
+    transform: scale(2);
+}
+
+#smoothbtnbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    flex-grow: 1;
+}
+
+#menu button {
+    border-style: none;
+    border-radius: 5px;
+    filter: drop-shadow(0 7px 0 black);
+    padding: 10px;
+    margin-bottom: 5px;
+    transition: all 0.4s;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}    
+
+ul>li>button.menubtndown {
+    filter: drop-shadow(0 3px 0 black) !important;;
+    transform: translateY(4px);
+    background-color: var(--accentlight);
+    color: black;
+}
+
+#hintbox {
+    background-color: var(--primary);
+    margin: 0 20px 0px 20px;
+    border-radius: 15px;
+    box-shadow: var(--base-shadow);
 }
