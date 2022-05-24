@@ -106,9 +106,24 @@ const Viewer = (() => {
         viewerBox.appendChild(imageList[`moc${i + 1}`]);
     }
 
+    //Display a description based on current image index.
+    const displayText = (index) => {
+        const desc = document.getElementById('desc');
+
+        const descriptions = ["Hi, I'm Mocchan.",
+                                "And this is my very best friend, Jake.",
+                                "Yesterday, there was a duck at the park.", 
+                                "And Jake was behaving very naughty.",
+                                "Jake upset the goose.",
+                                "Me and Jake had fun at the park."];
+
+        desc.innerText = descriptions[index];
+    }
+
     let timer = null;
     let offsetList = {};
 
+    //Center the image most centered in the image viewer.
     const centerImage = () => {
 
         //Set the image that is closest to the center to center.
@@ -119,7 +134,10 @@ const Viewer = (() => {
         });
 
         //Used to compare each image's offset to find one closer to 360.
-        let goal = 360;
+        const viewerRect = viewerBox.getBoundingClientRect();
+        
+        // let goal = viewerRect.left * 2;
+        let goal = 360 + viewerRect.left;
 
         //Assign closest to the image that is most centered.
         const offsetArray  = Object.values(offsetList);
@@ -136,6 +154,9 @@ const Viewer = (() => {
 
         //Get index of the most centered image.
         const index = Object.keys(offsetList).indexOf(centerImage);
+
+        //Show the image's corresponding description.
+        displayText(index);
 
         //Get width of images and the padding of the viewerbox.
         const imageWidth = imageList['moc1'].offsetWidth;  
@@ -161,7 +182,7 @@ const Viewer = (() => {
         //After timeout, center the image closest to center.
         timer = setTimeout(function() {
             centerImage();
-        }, 50);
+        }, 100);
     }, false);
 })();
 
@@ -213,7 +234,7 @@ const ImageButtons = (() => {
         }
     });
  
-
+    //Slide the image viewer either left or right one image.
     const rotateImages = (direction) => {
         const scrollAmount  = viewerBox.offsetWidth;
 
@@ -222,7 +243,6 @@ const ImageButtons = (() => {
         } else {
             viewerBox.scrollTo(viewerBox.scrollLeft - scrollAmount + 10, 0);
         }
-        
     }
 
 
